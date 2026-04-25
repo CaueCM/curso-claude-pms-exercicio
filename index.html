@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArenaCash · Jornada Free → Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       TOPBAR DO SITE
+       ============================================================ -->
+  <header class="site-topbar">
+    <div class="site-brand">
+      <div class="site-brand-mark">A</div>
+      <div>
+        <div class="site-brand-name">arenacash</div>
+        <div class="site-tag">Protótipo · Jornada Free → Pro</div>
+      </div>
+    </div>
+
+    <nav class="screen-switcher" aria-label="Navegar entre telas">
+      <button class="switcher-btn active" data-nav="screen-1">01 · Home</button>
+      <button class="switcher-btn" data-nav="screen-2">02 · Plano Pro</button>
+      <button class="switcher-btn" data-nav="screen-3">03 · Trial ativo</button>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       PALCO COM O PHONE
+       ============================================================ -->
+  <main class="site-stage">
+    <div class="site-stage-bg"></div>
+
+    <aside class="stage-info" id="stage-info">
+      <div class="stage-info-label" id="info-label">Tela 01 · Home</div>
+      <h2 class="stage-info-title" id="info-title">Gatilho contextual no momento certo.</h2>
+      <p class="stage-info-desc" id="info-desc">Banner Pro aparece quando o usuário cruza R$ 500 de AUM — um dos triggers mapeados na iniciativa.</p>
+    </aside>
+
+    <div class="phone">
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="icons">
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M1 7h2v2H1zM4 5h2v4H4zM7 3h2v6H7zM10 1h2v8h-2z"/></svg>
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="0.5" y="2" width="13" height="6" rx="1.5"/><rect x="2" y="3.5" width="9" height="3" fill="currentColor"/><rect x="14" y="4" width="1.2" height="2"/></svg>
+        </div>
+      </div>
+
+      <!-- =========================================================
+           TELA 01 — HOME COM TRIGGER CONTEXTUAL
+           ========================================================= -->
+      <section class="app-screen active" id="screen-1">
+        <div class="screen-scroll">
+          <div class="home-header">
+            <div class="greeting-block">
+              <div class="greeting-label">Oi 👋</div>
+              <div class="greeting-name">Lucas Andrade</div>
+            </div>
+            <div class="avatar">LA</div>
+          </div>
+
+          <div class="balance-card">
+            <div class="balance-label">Patrimônio total</div>
+            <div class="balance-value">R$ 532,40</div>
+            <div class="balance-change">
+              <span>↑ R$ 32,40</span>
+              <span class="change-period">· últimos 30 dias</span>
+            </div>
+          </div>
+
+          <div class="trigger-card">
+            <span class="trigger-badge">Você desbloqueou</span>
+            <h3 class="trigger-title">Passou dos R$500.<br>Hora de testar o Pro.</h3>
+            <p class="trigger-subtitle">7 dias grátis · cancele quando quiser. Acesse rentabilidade detalhada, simulador e produtos exclusivos.</p>
+            <button class="trigger-cta" data-nav="screen-2">
+              Começar trial grátis
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <div class="section-label">M E U S · I N V E S T I M E N T O S</div>
+
+          <div class="invest-list">
+            <div class="invest-item">
+              <div class="invest-info">
+                <span class="invest-name">CDB Liquidez Diária</span>
+                <span class="invest-meta">100% CDI · vence 2027</span>
+              </div>
+              <div class="invest-value">
+                <span class="invest-amount">R$ 320,00</span>
+                <span class="invest-yield">+12,3% a.a.</span>
+              </div>
+            </div>
+
+            <div class="invest-item">
+              <div class="invest-info">
+                <span class="invest-name">Tesouro Selic</span>
+                <span class="invest-meta">Pós-fixado · vence 2029</span>
+              </div>
+              <div class="invest-value">
+                <span class="invest-amount">R$ 150,00</span>
+                <span class="invest-yield">+11,8% a.a.</span>
+              </div>
+            </div>
+
+            <div class="invest-item">
+              <div class="invest-info">
+                <span class="invest-name">LCI Banco XP</span>
+                <span class="invest-meta">Isento de IR · 2 anos</span>
+              </div>
+              <div class="invest-value">
+                <span class="invest-amount">R$ 62,40</span>
+                <span class="invest-yield">+10,5% a.a.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pa-footer">
+          <span class="pa-logo"><span class="pa-red">PRODUCT</span> ARENA</span>
+        </div>
+
+        <nav class="tab-bar">
+          <div class="tab-item active">
+            <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
+            <span>Home</span>
+          </div>
+          <div class="tab-item">
+            <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+            <span>Investir</span>
+          </div>
+          <div class="tab-item">
+            <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+            <span>Carteira</span>
+          </div>
+          <div class="tab-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9h4a2.5 2.5 0 010 5h-4M9 14h4.5a2.5 2.5 0 010 5H9M9 6v3M9 19v-5"/></svg>
+            <span>Cripto</span>
+          </div>
+          <div class="tab-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <span>Perfil</span>
+          </div>
+        </nav>
+      </section>
+
+      <!-- =========================================================
+           TELA 02 — PLANO PRO
+           ========================================================= -->
+      <section class="app-screen" id="screen-2">
+        <div class="screen-scroll">
+          <div class="pro-header">
+            <button class="icon-button" data-nav="screen-1" aria-label="Voltar">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+          </div>
+
+          <div class="pro-hero">
+            <span class="pro-tag">Pro · 7 dias grátis</span>
+            <h2 class="pro-title">Mais ferramentas pra fazer seu dinheiro render.</h2>
+            <p class="pro-pitch">Rentabilidade detalhada, simulador avançado e produtos com taxa zero. Sem fidelidade.</p>
+            <div class="pro-price">
+              <span class="pro-price-amount">R$ 19,90</span>
+              <span class="pro-price-period">/mês após o trial</span>
+              <span class="pro-price-trial">Grátis 7 dias</span>
+            </div>
+          </div>
+
+          <div class="section-label">F R E E · V S · P R O</div>
+
+          <div class="compare-table">
+            <div class="compare-head">
+              <span class="col">Recurso</span>
+              <span class="col free">Free</span>
+              <span class="col pro">Pro</span>
+            </div>
+
+            <div class="compare-row">
+              <span class="feature">Renda fixa básica</span>
+              <span class="free"><span class="check yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></span>
+              <span class="pro"><span class="check yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></span>
+            </div>
+
+            <div class="compare-row">
+              <span class="feature">Rentabilidade detalhada</span>
+              <span class="free"><span class="check no"><svg viewBox="0 0 24 24"><line x1="6" y1="12" x2="18" y2="12"/></svg></span></span>
+              <span class="pro"><span class="check yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></span>
+            </div>
+
+            <div class="compare-row">
+              <span class="feature">Simulador avançado</span>
+              <span class="free"><span class="check no"><svg viewBox="0 0 24 24"><line x1="6" y1="12" x2="18" y2="12"/></svg></span></span>
+              <span class="pro"><span class="check yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></span>
+            </div>
+
+            <div class="compare-row">
+              <span class="feature">CDBs taxa zero</span>
+              <span class="free"><span class="check no"><svg viewBox="0 0 24 24"><line x1="6" y1="12" x2="18" y2="12"/></svg></span></span>
+              <span class="pro"><span class="check yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></span>
+            </div>
+
+            <div class="compare-row">
+              <span class="feature">Suporte prioritário</span>
+              <span class="free"><span class="check no"><svg viewBox="0 0 24 24"><line x1="6" y1="12" x2="18" y2="12"/></svg></span></span>
+              <span class="pro"><span class="check yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></span>
+            </div>
+          </div>
+
+          <div class="section-label">P O R · Q U E · F A Z · S E N T I D O</div>
+
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+              </div>
+              <div class="benefit-text">
+                <div class="benefit-title">Rentabilidade real</div>
+                <div class="benefit-desc">Veja quanto cada investimento rendeu por mês. Sem média confusa.</div>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9h4a2.5 2.5 0 010 5h-4M9 14h4.5a2.5 2.5 0 010 5H9M9 6v3M9 19v-5"/></svg>
+              </div>
+              <div class="benefit-text">
+                <div class="benefit-title">Taxa zero em CDBs selecionados</div>
+                <div class="benefit-desc">Economiza até R$ 240/ano em taxas que o Free paga.</div>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              </div>
+              <div class="benefit-text">
+                <div class="benefit-title">Suporte direto, sem fila</div>
+                <div class="benefit-desc">Resposta em até 1h em horário comercial.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-block">
+            <button class="btn-primary" data-nav="screen-3">Começar 7 dias grátis</button>
+            <button class="btn-tertiary" data-nav="screen-1">Continuar no Free por enquanto</button>
+            <p class="fineprint">Sem cobrança hoje. Você é avisado 2 dias antes do fim do trial.</p>
+          </div>
+        </div>
+
+        <div class="pa-footer">
+          <span class="pa-logo"><span class="pa-red">PRODUCT</span> ARENA</span>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           TELA 03 — TRIAL ATIVADO
+           ========================================================= -->
+      <section class="app-screen" id="screen-3">
+        <div class="screen-scroll">
+          <div class="success-screen">
+            <div class="success-top">
+              <div class="success-icon">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="success-tag">Pro · ativo</span>
+              <h2 class="success-title">Trial ativado, Lucas.</h2>
+              <p class="success-subtitle">Você tem 7 dias para usar tudo. Cancele quando quiser pelo Perfil.</p>
+            </div>
+
+            <div class="trial-details">
+              <div class="trial-row">
+                <span class="label">Plano</span>
+                <span class="value">ArenaCash Pro</span>
+              </div>
+              <div class="trial-row">
+                <span class="label">Trial até</span>
+                <span class="value">02 de maio</span>
+              </div>
+              <div class="trial-row">
+                <span class="label">Primeira cobrança</span>
+                <span class="value highlight">R$ 19,90 · 03/05</span>
+              </div>
+            </div>
+
+            <div class="unlocks-list">
+              <div class="section-label-inline">L I B E R A D O · A G O R A</div>
+              <div class="unlock-item">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                Rentabilidade detalhada por ativo
+              </div>
+              <div class="unlock-item">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                Simulador de carteira avançado
+              </div>
+              <div class="unlock-item">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                CDBs com taxa zero
+              </div>
+              <div class="unlock-item">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                Suporte prioritário
+              </div>
+            </div>
+
+            <div class="success-actions">
+              <button class="btn-primary" data-nav="screen-1">Explorar recursos Pro</button>
+              <button class="btn-secondary" data-nav="screen-1">Ir para a Home</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pa-footer">
+          <span class="pa-logo"><span class="pa-red">PRODUCT</span> ARENA</span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER DO SITE
+       ============================================================ -->
+  <footer class="site-footer">
+    <span>ArenaCash · Squad Ativação · Q2 2026</span>
+    <span>Protótipo navegável · v0.1</span>
+  </footer>
+
+  <!-- ============================================================
+       NAVEGAÇÃO ENTRE TELAS
+       ============================================================ -->
+  <script>
+    (function () {
+      const screens = document.querySelectorAll('.app-screen');
+      const switcherBtns = document.querySelectorAll('.switcher-btn');
+
+      const stageInfo = {
+        'screen-1': {
+          label: 'Tela 01 · Home',
+          title: 'Gatilho contextual no momento certo.',
+          desc: 'Banner Pro aparece quando o usuário cruza R$ 500 de AUM — um dos triggers mapeados na iniciativa.'
+        },
+        'screen-2': {
+          label: 'Tela 02 · Plano Pro',
+          title: 'Comparativo direto, sem firula.',
+          desc: 'Free vs Pro lado a lado, benefícios ancorados em valor concreto e CTA do trial de 7 dias.'
+        },
+        'screen-3': {
+          label: 'Tela 03 · Trial ativo',
+          title: 'Confirmação clara e honesta.',
+          desc: 'Data da primeira cobrança visível, lista do que foi liberado e atalho pra explorar o Pro.'
+        }
+      };
+
+      const infoLabel = document.getElementById('info-label');
+      const infoTitle = document.getElementById('info-title');
+      const infoDesc = document.getElementById('info-desc');
+
+      function showScreen(id) {
+        const target = document.getElementById(id);
+        if (!target) return;
+
+        screens.forEach(s => s.classList.remove('active'));
+        target.classList.add('active');
+
+        switcherBtns.forEach(b => {
+          b.classList.toggle('active', b.dataset.nav === id);
+        });
+
+        const info = stageInfo[id];
+        if (info) {
+          infoLabel.textContent = info.label;
+          infoTitle.textContent = info.title;
+          infoDesc.textContent = info.desc;
+        }
+
+        const scrollEl = target.querySelector('.screen-scroll');
+        if (scrollEl) scrollEl.scrollTop = 0;
+
+        if (history.replaceState) {
+          history.replaceState(null, '', '#' + id);
+        }
+      }
+
+      document.querySelectorAll('[data-nav]').forEach(el => {
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          showScreen(el.dataset.nav);
+        });
+      });
+
+      const initial = (location.hash || '#screen-1').replace('#', '');
+      if (document.getElementById(initial)) showScreen(initial);
+    })();
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

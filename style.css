@@ -1,0 +1,998 @@
+/* ============================================================
+   ArenaCash — Protótipo Jornada Free → Pro
+   Design System v3.0
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;900&family=Inter:wght@400;500;600&display=swap');
+
+/* ---------- Tokens ---------- */
+:root {
+  /* Brand */
+  --brand-red: #FF494C;
+  --brand-red-hover: #E63B3E;
+  --brand-red-press: #C8282B;
+  --brand-black: #0A0A0A;
+  --brand-white: #FFFFFF;
+
+  /* Surfaces */
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F9F9F9;
+  --surface-tertiary: #F2F2F2;
+  --surface-dark: #0A0A0A;
+
+  /* Semantic */
+  --success: #1FA05B;
+  --error: #D93434;
+  --warning: #E08A1E;
+  --info: #2870E0;
+
+  /* Neutrals */
+  --neutral-900: #141414;
+  --neutral-700: #333333;
+  --neutral-500: #7A7A7A;
+  --neutral-300: #D1D1D1;
+  --neutral-100: #F2F2F2;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Radius */
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-cta: 0 8px 24px rgba(255, 73, 76, 0.25);
+  --shadow-tab: 0 -1px 0 var(--neutral-300);
+}
+
+/* ---------- Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--neutral-900);
+  background: var(--surface-secondary);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ---------- Layout do site ---------- */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-topbar {
+  background: var(--surface-primary);
+  border-bottom: 1px solid var(--neutral-300);
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.site-brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--brand-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-white);
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.site-brand-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--brand-black);
+}
+
+.site-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+}
+
+.screen-switcher {
+  display: flex;
+  gap: var(--space-2);
+  padding: 4px;
+  background: var(--surface-tertiary);
+  border-radius: var(--radius-pill);
+}
+
+.switcher-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--neutral-500);
+  border-radius: var(--radius-pill);
+  transition: all 0.2s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.switcher-btn:hover {
+  color: var(--neutral-900);
+}
+
+.switcher-btn.active {
+  background: var(--brand-black);
+  color: var(--brand-white);
+}
+
+.site-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10) var(--space-4);
+  position: relative;
+}
+
+.site-stage-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 73, 76, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(10, 10, 10, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.stage-info {
+  position: absolute;
+  top: var(--space-8);
+  left: var(--space-8);
+  max-width: 280px;
+  z-index: 2;
+}
+
+.stage-info-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+  margin-bottom: var(--space-2);
+}
+
+.stage-info-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-2);
+  line-height: 1.15;
+}
+
+.stage-info-desc {
+  font-size: 13px;
+  color: var(--neutral-500);
+  line-height: 1.5;
+}
+
+.site-footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--neutral-300);
+  background: var(--surface-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--neutral-500);
+}
+
+@media (max-width: 900px) {
+  .stage-info { display: none; }
+}
+
+@media (max-width: 720px) {
+  .site-topbar { flex-wrap: wrap; gap: var(--space-3); }
+  .site-tag { display: none; }
+  .switcher-btn { padding: 6px 12px; font-size: 12px; }
+}
+
+/* ---------- Mobile frame ---------- */
+.phone {
+  width: 360px;
+  height: 760px;
+  background: var(--surface-primary);
+  border-radius: 36px;
+  border: 8px solid var(--brand-black);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(10, 10, 10, 0.12);
+  z-index: 1;
+}
+
+.app-screen {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  animation: screenIn 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.app-screen.active {
+  display: flex;
+}
+
+@keyframes screenIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.screen-scroll {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--surface-primary);
+  padding-bottom: var(--space-4);
+}
+
+.screen-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.status-bar {
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-6);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--neutral-900);
+  background: var(--surface-primary);
+  flex-shrink: 0;
+}
+
+.status-bar .icons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--surface-primary);
+  padding-bottom: var(--space-4);
+}
+
+.app-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Bottom tab nav ---------- */
+.tab-bar {
+  height: 68px;
+  background: var(--surface-primary);
+  box-shadow: var(--shadow-tab);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 var(--space-2);
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--neutral-500);
+  flex: 1;
+  padding: var(--space-2) 0;
+}
+
+.tab-item.active {
+  color: var(--brand-red);
+}
+
+.tab-item svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.tab-item span {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.tab-item.active span {
+  font-weight: 600;
+}
+
+/* ---------- Logo Product Arena ---------- */
+.pa-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--space-2) var(--space-4);
+  background: var(--surface-primary);
+}
+
+.pa-logo {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--neutral-500);
+}
+
+.pa-logo .pa-red {
+  color: var(--brand-red);
+}
+
+/* ============================================================
+   TELA 1 — HOME COM TRIGGER CONTEXTUAL
+   ============================================================ */
+
+.home-header {
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greeting-block .greeting-label {
+  font-size: 12px;
+  color: var(--neutral-500);
+  margin-bottom: 2px;
+}
+
+.greeting-block .greeting-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--neutral-900);
+  letter-spacing: -0.01em;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--neutral-700);
+}
+
+.balance-card {
+  margin: 0 var(--space-4) var(--space-4);
+  padding: var(--space-5);
+  background: var(--surface-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.balance-label {
+  font-size: 12px;
+  color: var(--neutral-500);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.balance-value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-3);
+}
+
+.balance-change {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--success);
+  font-weight: 500;
+}
+
+.balance-change .change-period {
+  color: var(--neutral-500);
+  font-weight: 400;
+}
+
+/* Trigger card — destaque Pro */
+.trigger-card {
+  margin: 0 var(--space-4) var(--space-6);
+  padding: var(--space-5);
+  background: var(--brand-black);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.trigger-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--brand-red);
+  color: var(--brand-white);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-3);
+}
+
+.trigger-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--brand-white);
+  margin-bottom: var(--space-2);
+}
+
+.trigger-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+}
+
+.trigger-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 12px 20px;
+  background: var(--brand-red);
+  color: var(--brand-white);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-cta);
+}
+
+.trigger-cta svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  fill: none;
+}
+
+/* Section labels (estilo PA) */
+.section-label {
+  padding: 0 var(--space-4);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  margin-bottom: var(--space-3);
+}
+
+/* Lista de investimentos */
+.invest-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0 var(--space-4);
+}
+
+.invest-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-primary);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-lg);
+}
+
+.invest-item .invest-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.invest-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--neutral-900);
+}
+
+.invest-meta {
+  font-size: 12px;
+  color: var(--neutral-500);
+}
+
+.invest-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.invest-amount {
+  font-weight: 500;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: var(--neutral-900);
+}
+
+.invest-yield {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* ============================================================
+   TELA 2 — DETALHES DO PLANO PRO
+   ============================================================ */
+
+.pro-header {
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--neutral-900);
+  stroke-width: 2;
+  fill: none;
+}
+
+.pro-hero {
+  padding: var(--space-4) var(--space-5) var(--space-8);
+  background: var(--brand-black);
+  color: var(--brand-white);
+  margin: 0 var(--space-4);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+}
+
+.pro-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--brand-red);
+  color: var(--brand-white);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-4);
+}
+
+.pro-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+}
+
+.pro-pitch {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin-bottom: var(--space-5);
+}
+
+.pro-price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pro-price-amount {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.pro-price-period {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pro-price-trial {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+}
+
+/* Comparativo Free vs Pro */
+.compare-table {
+  margin: 0 var(--space-4) var(--space-6);
+  background: var(--surface-primary);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.compare-head {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-secondary);
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.compare-head .col {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+}
+
+.compare-head .col.pro {
+  color: var(--brand-red);
+  text-align: center;
+}
+
+.compare-head .col.free {
+  text-align: center;
+}
+
+.compare-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.compare-row:last-child {
+  border-bottom: none;
+}
+
+.compare-row .feature {
+  font-size: 13px;
+  color: var(--neutral-900);
+  font-weight: 500;
+}
+
+.compare-row .free,
+.compare-row .pro {
+  text-align: center;
+  font-size: 12px;
+  color: var(--neutral-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-row .pro {
+  color: var(--neutral-900);
+  font-weight: 500;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.check svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 3;
+  fill: none;
+}
+
+.check.yes svg { stroke: var(--success); }
+.check.no svg { stroke: var(--neutral-300); }
+
+/* Lista de benefícios */
+.benefits-list {
+  padding: 0 var(--space-4);
+  margin-bottom: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.benefit-item {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.benefit-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 73, 76, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefit-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--brand-red);
+  stroke-width: 2;
+  fill: none;
+}
+
+.benefit-text .benefit-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--neutral-900);
+  margin-bottom: 2px;
+}
+
+.benefit-text .benefit-desc {
+  font-size: 12px;
+  color: var(--neutral-500);
+  line-height: 1.45;
+}
+
+/* CTA principal */
+.cta-block {
+  padding: 0 var(--space-4) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px var(--space-6);
+  background: var(--brand-red);
+  color: var(--brand-white);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-cta);
+}
+
+.btn-tertiary {
+  width: 100%;
+  padding: 12px;
+  color: var(--neutral-500);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.fineprint {
+  text-align: center;
+  font-size: 11px;
+  color: var(--neutral-500);
+  padding: 0 var(--space-6);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   TELA 3 — TRIAL ATIVADO (SUCESSO)
+   ============================================================ */
+
+.success-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-6);
+}
+
+.success-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-8) 0;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-pill);
+  background: rgba(31, 160, 91, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.success-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--success);
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.success-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(255, 73, 76, 0.1);
+  color: var(--brand-red);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-4);
+}
+
+.success-title {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-3);
+}
+
+.success-subtitle {
+  font-size: 14px;
+  color: var(--neutral-500);
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+/* Card de detalhes do trial */
+.trial-details {
+  background: var(--surface-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.trial-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--neutral-300);
+}
+
+.trial-row:last-child {
+  border-bottom: none;
+}
+
+.trial-row .label {
+  font-size: 12px;
+  color: var(--neutral-500);
+  font-weight: 500;
+}
+
+.trial-row .value {
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--neutral-900);
+}
+
+.trial-row .value.highlight {
+  color: var(--brand-red);
+}
+
+/* Lista "o que liberou" */
+.unlocks-list {
+  margin-bottom: var(--space-6);
+}
+
+.unlocks-list .section-label-inline {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  margin-bottom: var(--space-3);
+}
+
+.unlock-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  font-size: 13px;
+  color: var(--neutral-900);
+}
+
+.unlock-item svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--success);
+  stroke-width: 2.5;
+  fill: none;
+  flex-shrink: 0;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 12px var(--space-6);
+  background: transparent;
+  border: 1px solid var(--neutral-300);
+  color: var(--neutral-900);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+}
